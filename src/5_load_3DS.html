@@ -7,7 +7,7 @@
        
         <script type="text/javascript" src="../libs/three.js"></script>
         <script type="text/javascript" src="../libs/TrackballControls.js"></script>
-        <script type="text/javascript" src="../libs/TDSLoader.js"></script>
+        <script type="text/javascript" src="../libs/TDSLoader.js"></script>q
         <script type="text/javascript" src="../libs/Loader.js"></script>
         <script type="text/javascript" src="../libs/FileLoader.js"></script>
         <style>
@@ -129,34 +129,34 @@
 				directionalLight.position.set( 0, 0, 2 );
 				scene.add( directionalLight );
 
-				//3ds files dont store normal maps
-				var loader = new THREE.TextureLoader();
-				var normal = loader.load( 'models/3ds/portalgun/textures/normal.jpg' );
+				// //3ds files dont store normal maps
+				// var loader = new THREE.TextureLoader();
+				// var normal = loader.load( 'models/3ds/portalgun/textures/normal.jpg' );
 
-				var loader = new THREE.TDSLoader;
-				loader.setResourcePath( 'models/3ds/portalgun/textures/' );
-				loader.load( 'models/3ds/portalgun/portalgun.3ds', function ( object ) {
+				// var loader = new THREE.TDSLoader;
+				// loader.setResourcePath( 'models/3ds/portalgun/textures/' );
+				// loader.load( 'models/3ds/portalgun/portalgun.3ds', function ( object ) {
 
-					object.traverse( function ( child ) {
+				// 	object.traverse( function ( child ) {
 
-						if ( child.isMesh ) {
+				// 		if ( child.isMesh ) {
 
-							child.material.normalMap = normal;
+				// 			child.material.normalMap = normal;
 
-						}
+				// 		}
 
-					} );
+				// 	} );
 
-					scene.add( object );
+				// 	scene.add( object );
 
-				} );
+				// } );
 
 				renderer = new THREE.WebGLRenderer();
-				renderer.setPixelRatio( window.devicePixelRatio );
+				//renderer.setPixelRatio( window.devicePixelRatio );
 				renderer.setSize( window.innerWidth, window.innerHeight );
 				container.appendChild( renderer.domElement );
 
-				controls = new TrackballControls( camera, renderer.domElement );
+				//controls = new TrackballControls( camera, renderer.domElement );
 
 				window.addEventListener( 'resize', resize, false );
 
@@ -173,7 +173,7 @@
 
 			function animate() {
 
-				controls.update();
+				//controls.update();
 				renderer.render( scene, camera );
 
 				requestAnimationFrame( animate );
