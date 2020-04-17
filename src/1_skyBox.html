@@ -15,10 +15,10 @@
     <script src="../three.js"></script>
     <script src="../OrbitControls.js"></script>
     <script>
-      let scene, camera, renderer;
+      let scene, camera, renderer;  // three 를 쓰는 기본 3요소
       function init() {
         scene = new THREE.Scene();
-        camera = new THREE.PerspectiveCamera(55,window.innerWidth/window.innerHeight,45,30000);
+        camera = new THREE.PerspectiveCamera(55,window.innerWidth/window.innerHeight,45,30000); //https://justmakeyourself.tistory.com/entry/camera-setting-threejs
         camera.position.set(-900,-200,-900);
         renderer = new THREE.WebGLRenderer({antialias:true});
         renderer.setSize(window.innerWidth,window.innerHeight);
@@ -64,7 +64,7 @@
       }
       function animate() {
         renderer.render(scene,camera);
-        requestAnimationFrame(animate);
+        requestAnimationFrame(animate); //window 객체함수 
       }
       init();
     </script>
